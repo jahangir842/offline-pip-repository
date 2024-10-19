@@ -2,7 +2,7 @@
 
 ---
 
-## Step 1: Installation of PIP
+### Step 1: Installation of PIP
 
    - Install PIP through [Miniconda](https://docs.anaconda.com/free/miniconda/index.html).
 download Miniconda.
