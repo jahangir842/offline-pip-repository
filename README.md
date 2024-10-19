@@ -1,44 +1,25 @@
-Reference:
+## Reference:
 - https://github.com/pypa/get-pip
 
 ---
 
-**Setting Up an Offline PIP Repository on Ubuntu**
+## Setting Up an Offline PIP Repository on Ubuntu
 
-### Prerequisites
+---
 
-1. **Install VirtualBox:**
+## Prerequisites
 
-   First, update your system and install VirtualBox using the following commands:
+### Install PIP
 
-   ```bash
-   sudo apt-get update
-   sudo apt-get install virtualbox
-   ```
-
-2. **Set Up Virtual Machines:**
-
-   - Create virtual machines on VirtualBox to act as clients.
-   - Install Miniconda on both machines. You can find the Miniconda installation guide [here](https://docs.anaconda.com/free/miniconda/index.html).
-
-### Step 1: Install Miniconda
-
-   - Visit the link provided above to download Miniconda.
-   - From the terminal, download and install Miniconda by following the on-screen instructions:
-     - Accept the license agreement.
-     - Choose the installation location (press Enter to accept the default).
-     - Type 'yes' to initialize Miniconda.
-
-### Step 2: Verify Installation of Miniconda and PIP
-
-   - Open a new terminal or command prompt and run the following commands to verify the installation:
+   - Install PIP through [Miniconda](https://docs.anaconda.com/free/miniconda/index.html).
+download Miniconda.
+   - Verify Installation of PIP
 
    ```bash
-   conda --version
    pip --version
    ```
 
-   This will display the installed versions of Miniconda and PIP.
+---
 
 ### Setting Up the Offline PIP Repository
 
