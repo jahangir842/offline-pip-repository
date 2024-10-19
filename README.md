@@ -7,9 +7,7 @@
 
 ---
 
-## Prerequisites
-
-### Install PIP
+## Step 1: Installation of PIP
 
    - Install PIP through [Miniconda](https://docs.anaconda.com/free/miniconda/index.html).
 download Miniconda.
@@ -21,15 +19,12 @@ download Miniconda.
 
 ---
 
-Here’s a rewritten version of your instructions for downloading and installing Python packages from a `requirements.txt` file using pip on Ubuntu:
 
----
-
-### Downloading Python Packages
+### Step 2: Downloading Python Packages
 
 To download and install Python packages specified in a `requirements.txt` file using `pip` on Ubuntu, follow these steps:
 
-#### Step 1: Prepare the `requirements.txt` File
+#### Prepare the `requirements.txt` File
 
 1. **Navigate to Your Project Directory:**
    Open a terminal and change to the directory containing your `requirements.txt` file using the `cd` command. Execute the following commands:
@@ -56,7 +51,7 @@ pip download --no-binary :all: -r requirements.txt
 
 ### Setting Up an Offline Network (Devnet)
 
-1. **Connect the PC to the Devnet:**
+1. **Connect the PC to the Local Network:**
    Ensure your PC is connected to the Devnet and configure the IP address accordingly.
 
 2. **Start a Simple HTTP Server:**
@@ -64,6 +59,8 @@ pip download --no-binary :all: -r requirements.txt
    ```bash
    python -m http.server 8000 --bind 192.168.1.102
    ```
+
+---
 
 ### Installing Python Packages on the Client Side via pip
 
@@ -122,5 +119,3 @@ After completing the installation, you should see the following libraries instal
 - wheel
 
 --- 
-
-This version clarifies the steps and organizes the information for easier understanding.
