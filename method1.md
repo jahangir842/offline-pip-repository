@@ -4,8 +4,8 @@
 
 ### Step 1: Installation of PIP
 
-   - Install PIP through [Miniconda](https://docs.anaconda.com/free/miniconda/index.html).
-   - You can also install on linux with following command:
+   - PIP can be installed by installing [Miniconda](https://docs.anaconda.com/free/miniconda/index.html).
+   - You can also install Miniconda on linux with following command:
 
 ```
 mkdir -p ~/miniconda3
