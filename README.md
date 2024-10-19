@@ -1,3 +1,8 @@
+Reference:
+- https://github.com/pypa/get-pip
+
+---
+
 **Setting Up an Offline PIP Repository on Ubuntu**
 
 ### Prerequisites
