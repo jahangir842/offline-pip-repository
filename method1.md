@@ -5,14 +5,14 @@
 ### Step 1: Installation of PIP
 
    - Install PIP through [Miniconda](https://docs.anaconda.com/free/miniconda/index.html).
-   - Verify Installation of PIP
+   - Download Miniconda according to OS and install it.
+   - Verify Installation of pip
 
    ```bash
    pip --version
    ```
 
 ---
-
 
 ### Step 2: Downloading Python Packages
 
@@ -34,32 +34,49 @@ To download and install Python packages specified in a `requirements.txt` file u
    pandas
    numpy
    flask
+   requests
+   joblib
+   pluggy
+   six
+   tomli
+   pyparsing
+   pytz
+   tzdata
+   packaging
+   wheel
    ```
 
-#### Step 2: Download the Packages
+#### Method 1: Download the Packages with Requirement File
 
 Run the following command to download the specified packages:
 ```bash
 pip download --no-binary :all: -r requirements.txt
 ```
 
-### Setting Up an Offline Network (Devnet)
+#### Method 2: Download a Single Package
 
-1. **Connect the PC to the Local Network:**
-   Ensure your PC is connected to the Devnet and configure the IP address accordingly.
+Run the following command to download the specified package e.g requests:
+```bash
+pip download --no-binary :all: -r requests
+```
 
-2. **Start a Simple HTTP Server:**
-   Run the following command to start a server on your local network:
+
+#### Setting Up the Server with Local Network
+
+   - Connect the PC to the Local Network.
+   - Configure the IP address accordingly.
+   - Start a Simple HTTP Server with following command.
+
    ```bash
    python -m http.server 8000 --bind 192.168.1.102
    ```
 
 ---
 
-### Installing Python Packages on the Client Side via pip
+## Step 3: Installing Python Packages on the Client Side via pip
 
 #### Prerequisites:
-- Ensure `pip` or Miniconda is installed.
+- Ensure `pip` is installed.
 
 #### Verify pip Installation
 
@@ -68,7 +85,7 @@ To check if pip is installed on Ubuntu, run:
 pip --version
 ```
 
-#### Update pip
+#### Update pip if needed
 
 Make sure you have the latest version of pip by running:
 ```bash
