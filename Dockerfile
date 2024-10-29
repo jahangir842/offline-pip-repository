@@ -4,12 +4,18 @@ FROM nginx:alpine
 # Copy the pip packages to the Nginx server directory
 COPY packages /usr/share/nginx/html
 
-# Remove the default index.html if it exists
-RUN rm /usr/share/nginx/html/index.html
-
 # Copy your custom Nginx configuration file into the appropriate directory
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Optionally expose port 80 (or change this to match your service's port)
+# Copy the entrypoint script and make it executable
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# Set the entrypoint
+ENTRYPOINT ["/entrypoint.sh"]
+
+# Optionally expose port 80
 EXPOSE 80
 
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
