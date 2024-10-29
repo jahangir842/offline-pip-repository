@@ -1,6 +1,191 @@
-## Reference:
-
+## Setting Up an Offline PIP Server on Ubuntu
 
 ---
 
+### Step 1: Installation of PIP
 
+   - PIP can be installed by installing [Miniconda](https://docs.anaconda.com/free/miniconda/index.html).
+   - You can also install Miniconda on linux with following command:
+
+```
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm ~/miniconda3/miniconda.sh
+```
+
+
+2. **Initialize Conda**:
+   ```bash
+   ~/miniconda3/bin/conda init
+   ```
+
+3. **Activate Conda**:
+   ```bash
+   ~/miniconda3/bin/conda activate
+   ```
+
+4. **Verify Installation of pip**
+
+   ```bash
+   pip --version
+   ```
+
+---
+
+## Step 2: Downloading Python Packages
+
+To download and install Python packages specified in a `requirements.txt` file using `pip` on Ubuntu, follow these steps:
+
+#### Prepare the `requirements.txt` File
+
+1. **Navigate to Your Project Directory:**
+   Open a terminal and change to the directory containing your `requirements.txt` file using the `cd` command. Execute the following commands:
+   ```bash
+   mkdir packages
+   cd packages
+   nano requirements.txt
+   ```
+
+2. **Add Package Names:**
+   Write the names of the packages you want to download in the `requirements.txt` file. For example:
+   ```
+   pandas
+   numpy
+   flask
+   wheel
+   ```
+
+---
+
+### Method 1: Download Binary Packages:
+
+#### Download Linux Binary Package
+
+Run the following command to download the specified package in `Binary` format e.g requests:
+```bash
+pip download numpy --platform manylinux1_x86_64 --python-version 3.12 --only-binary=:all:
+
+```
+
+#### Download Linux Binary Package with Requirement File
+
+Run the following command to download the specified package in `Source Code` e.g requests:
+```bash
+pip download --platform manylinux1_x86_64 --python-version 3.12 --only-binary=:all: -r requirements.txt
+```
+
+#### Download Windows Binary Package
+
+Run the following command to download the specified package in `Binary` format e.g requests:
+```bash
+pip download numpy --platform win_amd64 --python-version 3.12 --only-binary=:all:
+```
+
+#### Download windows Binary Package with Requirement File
+
+Run the following command to download the specified package in `Source Code` e.g requests:
+```bash
+pip download --platform win_amd64 --python-version 3.12 --only-binary=:all: -r requirements.txt
+```
+
+---
+
+### Method 2: Download Source Code Packages: (This method has dependency issues yet)
+
+#### Download Source Code Packages with Requirement File
+
+Run the following command to download the specified packages:
+```bash
+pip download --no-binary :all: --python-version 3.12 -r requirements.txt
+```
+
+#### Download Source Code Packages with Requirement File
+
+Run the following command to download the specified packages:
+```bash
+pip download --no-binary :all: --python-version 3.12 -r requirements.txt
+```
+
+---
+
+### Setting Up the Python Server with Local Network
+
+   - Connect the PC to the Local Network.
+   - Configure the IP address accordingly.
+   - Navigate to packages directory and start a Simple HTTP Server with following command.
+
+   ```bash
+   cd /home/pip/packages
+   python -m http.server 80 --bind 192.168.1.109
+   ```
+
+---
+
+## Step 3: Installing Python Packages on the Client Side via pip
+
+Create a new Conda environment:
+
+```bash
+conda create -n myenv python=3.12
+```
+
+Replace `myenv` with your desired environment name and `3.12` with the version of Python you want to use.
+
+### To Activate the Environment:
+```bash
+conda activate myenv
+```
+
+### To Deactivate the Environment:
+```bash
+conda deactivate
+```
+
+#### Verify pip Installation
+
+To check if pip is installed on Ubuntu, run:
+```bash
+pip --version
+```
+
+#### Update pip (Optional)
+
+Make sure you have the latest version of pip by running:
+```bash
+pip install --upgrade pip
+```
+
+### Installation Options
+
+**Option 1: Install Packages Directly**
+
+Open a terminal and run the following command to install a specific library, such as `pandas`:
+```bash
+pip install --no-index --find-links=http://192.168.1.109:80 --trusted-host 192.168.1.109 numpy
+```
+- Replace the IP with actual address.
+  
+**Option 2: Install Packages from `requirements.txt`**
+
+Create a new `requirements.txt` file and list the libraries you need. Then run:
+```bash
+pip install --no-index --find-links=http://192.168.1.109:80 --trusted-host 192.168.1.109 -r requirements.txt
+```
+
+### To List Installed PIP Packages:
+Run the following command in your terminal:
+```bash
+pip list
+```
+
+### To Uninstall a PIP Package:
+Use the following command, replacing `package_name` with the name of the package you want to uninstall:
+```bash
+pip uninstall package_name
+```
+
+You will be prompted to confirm the uninstallation. If you want to skip the prompt, add the `-y` flag:
+```bash
+pip uninstall -y package_name
+```
