@@ -8,6 +8,6 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./pip-packages:/usr/share/nginx/html  # Use a bind mount instead of a volume
+      - ./packages:/usr/share/nginx/html  # Use a bind mount instead of a volume
     restart: always
 
