@@ -1,8 +1,8 @@
 # Use the lightweight Nginx image based on Alpine Linux
 FROM nginx:alpine
 
-# Copy the pip packages to the Nginx server directory
-COPY packages /usr/share/nginx/html
+# Copy the pip packages to the Nginx server directory (if docker volume used instead of bind)
+# COPY packages /usr/share/nginx/html
 
 # Copy your custom Nginx configuration file into the appropriate directory
 COPY nginx.conf /etc/nginx/conf.d/default.conf
