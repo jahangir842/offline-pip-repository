@@ -15,7 +15,31 @@
             color: #333;
             line-height: 1.6;
         }
-        
+
+        /* Navbar styles */
+        .navbar {
+            background-color: #3498db;
+            overflow: hidden;
+            padding: 10px 20px;
+            text-align: center;
+            width: 80%; /* Matching the container width */
+            margin: 0 auto; /* Centering the navbar */
+        }
+
+        .navbar a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            background-color: #2980b9;
+            color: white;
+        }
+
         /* Container */
         .container {
             width: 80%;
@@ -109,9 +133,19 @@
 </head>
 <body>
 
-<div class="container">
-    <h1>PIP Repository on Local Network</h1> 
+<!-- Title -->
+<h1>PIP Repository on Devnet</h1>
 
+<!-- Navbar below the title -->
+<div class="navbar">
+    <a href="http://192.168.1.109/home.html">Home</a>
+    <a href="http://192.168.1.109/pipconf.html">Edit the pip.conf</a>
+    <a href="http://192.168.1.109/requirements.txt" target="_blank">Check Package Availability</a>
+    <a href="http://192.168.1.109/" target="_blank">Index of Packages</a>
+</div>
+
+<!-- Main content -->
+<div class="container">
     <div class="section">
         <h2>Install a Python Package</h2>
         <p>Open a terminal and run the following command to install a pip package:</p>
@@ -124,11 +158,9 @@
     </div>
         
     <div class="section">
-        <a href="http://192.168.1.109/requirements.txt" class="button-link" target="_blank">Check Package Availability</a>
-        <a href="http://192.168.1.109/" class="button-link" target="_blank">Index of Packages</a>
-
-        <p>If the package is not available, <span class="important">Contact IT: 1234</span></p>
+        <p>If the package is not available, <span class="important">Contact Dte of IT: 4015</span></p>
     </div>
+
 </div>
 
 </body>
