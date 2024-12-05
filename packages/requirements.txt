@@ -1,0 +1,8 @@
+pandas==2.1.4
+numpy==1.26.4
+flask
+wheel
+tensorflow
+scikit-learn
+#durable-rules (wheel file of this package is not available on pypi website, so install is separately from tar file)
+setuptools==74.1.3
