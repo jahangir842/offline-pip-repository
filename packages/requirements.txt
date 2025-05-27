@@ -5,4 +5,4 @@ wheel
 tensorflow
 scikit-learn
 #durable-rules (wheel file of this package is not available on pypi website, so install is separately from tar file)
-setuptools==74.1.3
+setuptools
